@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+
+{% block title %} Red Sky {% endblock %}
+
+{% block content %}
+
+    <main>
+        {% if request.user.is_authenticated %}
+            <h1>Hello {{request.user.username}}</h1>
+        {% else %}
+            <h1>Hello Guest</h1>
+        {% endif %}
+        <div class="links">
+            <a href="{% url 'login' %}" class="button">Log In</a>
+            <a href="{% url 'register' %}" class="button button-primary">Register</a>
+        </div>
+        
+    </main>
+
+{% endblock %}

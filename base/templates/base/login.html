@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+
+{% block title %} Login | Red Sky {% endblock %}
+
+{% block content %}
+    <main>
+        <div class="form">
+            <h3>Welcome Back</h3>
+            <form action="#" method="POST">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Username">
+                <input type="password" name="password" placeholder="Password">
+                <input class="button button-primary" type="submit" value="LogIn">
+            </form>
+            <p>Haven't Signed Up Yet? <a href="{% url 'register' %}">Sign Up Here</a></p>
+        </div>
+    </main>
+{% endblock %}
